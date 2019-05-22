@@ -1,5 +1,9 @@
-test22:
-  build: .
-  volumes:
-    - .:/var/code
-      #  command: pwd || ls -a || ls /var/code
+version: '3.0'
+services:
+  test:
+    build:
+      context: .
+      dockerfile: dockerfile
+    command: ["ls", "/var/code"]
+    volumes:
+      - .:/var/code
